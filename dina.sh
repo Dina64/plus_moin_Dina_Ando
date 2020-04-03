@@ -1,3 +1,10 @@
 #!/bin/bash
-echo "Bonjour,c'est un jeux qui vous demande de deviner un nombre de 0 a 100."
-touch dina.c
+
+echo "Bonjour,ceci est un jeux de devinette"
+
+PS3="choisir le mode de jeux: "
+select mod_jeu in facile moyen difficile
+do
+echo “Vous avez choisi le mode $mod_jeu”
+break
+done
