@@ -116,9 +116,9 @@ int main()
     srand ( time(NULL) );
     note=0;
     printf("Choisir mode du jeux: \n");
-    printf("1- Mode Facile : 1 - 25\n");
-    printf("2- Mode Moyen : 1 - 50\n");
-    printf("3- Mode Difficile : 1 - 100\n");
+    printf("1- Mode Facile (1 - 25)\n");
+    printf("2- Mode Moyen (1 - 50)\n");
+    printf("3- Mode Difficile (1 - 100)\n");
     scanf("%d",&partie);
     for(y=1; y<=10; y++)
     {

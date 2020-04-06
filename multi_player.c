@@ -9,7 +9,6 @@ int partie_facile ( )
     int hazar=rand() % 25+1;
     int x;
     note=0;
-    printf("Mode du jeux Facile: \n");
     printf("Devigne un Nombre compris entre 1 et 25: \n");
     for( x=1; x<=5; x++)
     {
@@ -44,7 +43,6 @@ int partie_moyen ( )
     int hazar=rand() % 50+1;
     int x;
     note=0;
-    printf("Mode du jeux Moyen: \n");
     printf("Devigne un Nombre compris entre 1 et 50: \n");
     for( x=1; x<=5; x++)
     {
@@ -79,7 +77,6 @@ int partie_difficile ( )
     int hazar=rand() % 100+1;
     int x;
     note=0;
-    printf("Mode du jeux Difficile: \n");
     printf("Devigne un Nombre compris entre 1 et 100: \n");
     for( x=1; x<=5; x++)
     {
@@ -120,25 +117,43 @@ int main()
     printf("2- Mode Moyen (1 - 50)\n");
     printf("3- Mode Difficile (1 - 100)\n");
     scanf("%d",&partie);
-    for(y=1; y<=10; y++)
+    int nbr_joueur;
+    printf("Entrer nombre de joueur: \n");
+    scanf("%d",&nbr_joueur);
+    printf("Chaque joueur aurront 10 tentative .. Bon chance!! \n");
+    for(y=1; y<=nbr_joueur; y++)
     {
         switch(partie)
         {
             case 1 :
-                note+=partie_facile();
-                printf("  Ta Note pour l' instant est de %d / %d\n",note,y);
+                for (int i = 1; i <= 10; ++i)
+                {
+                    note=0;
+                    note+=partie_facile();
+                    printf("  Ta Note pour l' instant est de %d / %d\n",note,i);
+                }
+                printf(">>>La note total du joueur est %d\n",note);
                 break;
             case 2 :
-                note+=partie_moyen();
-                printf("  Ta Note pour l' instant est de %d / %d\n",note,y);
+                for (int i = 0; i < 10; ++i)
+                {
+                    note=0;
+                    note+=partie_moyen();
+                    printf("  Ta Note pour l' instant est de %d / %d\n",note,y);
+                }
+                printf(">>>La note total du joueur est %d\n",note);
                 break;
             case 3 :
-                note+=partie_difficile();
-                printf("  Ta Note pour l' instant est de %d / %d\n",note,y);
+                for (int i = 0; i < 10; ++i)
+                {
+                    note=0;
+                    note+=partie_difficile();
+                    printf("  Ta Note pour l' instant est de %d / %d\n",note,y);
+                }
+                printf(">>>La note total du joueur est %d\n",note);
                 break;
             default :
                 printf("Ce choix n'est pas valable\n");
         }
-        
     }
 }
